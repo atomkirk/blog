@@ -8,7 +8,6 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
-
 import { rhythm } from "../utils/typography"
 
 const Bio = () => {
@@ -25,10 +24,6 @@ const Bio = () => {
         siteMetadata {
           author {
             name
-            summary
-          }
-          social {
-            twitter
           }
         }
       }
@@ -40,6 +35,7 @@ const Bio = () => {
     <div
       style={{
         display: `flex`,
+        alignItems: 'center',
         marginBottom: rhythm(2.5),
       }}
     >
@@ -56,13 +52,30 @@ const Bio = () => {
           borderRadius: `50%`,
         }}
       />
-      <p>
-        Written by <strong>{author.name}</strong> {author.summary}
-        {` `}
-        <a href={`https://twitter.com/${social.twitter}`}>
-          You should follow him on Twitter
-        </a>
-      </p>
+      <div
+        style={{
+          display: `flex`,
+          flexDirection: 'column'
+        }}
+      >
+        <div>
+          Shower thoughts on Software by <strong>{author.name}</strong>
+        </div>
+        <div>
+          <a href={`https://twitter.com/atomkirk`}>
+            Twitter
+          </a>
+          <a href={'https://github.com/atomkirk'} style={{marginLeft: 5}}>
+            Github
+          </a>
+          <a href={'http://stackoverflow.com/users/798055/atomkirk'} style={{marginLeft: 5}}>
+            Stack Overflow
+          </a>
+          <a href={'https://www.linkedin.com/in/atomkirk/'} style={{marginLeft: 5}}>
+            LinkedIn
+          </a>
+        </div>
+      </div>
     </div>
   )
 }

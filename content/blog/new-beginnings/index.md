@@ -97,6 +97,12 @@ Alphabet Village and the subline of her own road, the Line Lane. Pityful a
 rhetoric question ran over her cheek, then she continued her way. On her way she
 met a copy.
 
+```elixir
+def hello(blah) do
+  IO.inspect("Hello")
+end
+```
+
 ###### Slapped cozy a that lightheartedly and far
 
 The copy warned the Little Blind Text, that where it came from it would have
