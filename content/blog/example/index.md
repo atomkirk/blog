@@ -1,22 +1,51 @@
 ---
-title: Hello World
-date: "2015-05-01T22:12:03.284Z"
-description: "Hello World"
+title: Whats the fastest way to look up an index in Elixir?
+date: "2020-04-15"
 ---
 
-This is my first post on my new fake blog! How exciting!
+Lets create a long list of a million items and look up the 500,000th item
+```elixir
+iex(54)> range = 1..1_000_000
+1..1000000
 
-I'm sure I'll write a lot more interesting things in the future.
+iex(55)> index = 500_000
+500000
 
-Oh, and here's a great quote from this Wikipedia on
-[salted duck eggs](https://en.wikipedia.org/wiki/Salted_duck_egg).
+iex(57)> list = range |> Enum.map(& &1)
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, ...]
 
-> A salted duck egg is a Chinese preserved food product made by soaking duck
-> eggs in brine, or packing each egg in damp, salted charcoal. In Asian
-> supermarkets, these eggs are sometimes sold covered in a thick layer of salted
-> charcoal paste. The eggs may also be sold with the salted paste removed,
-> wrapped in plastic, and vacuum packed. From the salt curing process, the
-> salted duck eggs have a briny aroma, a gelatin-like egg white and a
-> firm-textured, round yolk that is bright orange-red in color.
+iex(58)> tuple = List.to_tuple(list)
+{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, ...}
 
-![Chinese Salty Egg](./salty_egg.jpg)
+iex(59)> map = list |> Enum.with_index() |> Map.new()
+%{
+  702155 => 702154,
+  868847 => 868846,
+  899014 => 899013,
+  ...
+}
+```
+
+Here we can see that looking up an index in a linked list is very slow compared to looking up an index in a map or tuple:
+
+```elixir
+iex(61)> :timer.tc(fn -> Enum.each(1..1000, fn _ -> list |> Enum.at(index) end) end)
+{2154386, :ok}
+iex(62)> :timer.tc(fn -> Enum.each(1..1000, fn _ -> tuple |> elem(index) end) end)
+{1357, :ok}
+iex(63)> :timer.tc(fn -> Enum.each(1..1000, fn _ -> map[index] end) end)
+{1065, :ok}
+```
+
+So, which is faster? A tuple or a map?
+
+```elixir
+iex(65)> :timer.tc(fn -> Enum.each(1..1_000_000, fn _ -> tuple |> elem(index) end) end)
+{1272816, :ok}
+iex(66)> :timer.tc(fn -> Enum.each(1..1_000_000, fn _ -> map[index] end) end)
+{1065876, :ok}
+```
+
+A map keyed by index is even faster
+
+<!-- ![Chinese Salty Egg](./salty_egg.jpg) -->

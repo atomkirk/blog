@@ -1,3 +1,9 @@
 .links a {
   color: #777;
 }
+
+pre[class*="language-"] {
+  border-radius: 5px;
+  box-shadow: 0 5px 7px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
