@@ -59,19 +59,19 @@ const Bio = () => {
         }}
       >
         <div>
-          Shower thoughts on Software by <strong>{author.name}</strong>
+          Shower thoughts on programming by <strong>{author.name}</strong>
         </div>
         <div>
           <a href={`https://twitter.com/atomkirk`}>
             Twitter
           </a>
-          <a href={'https://github.com/atomkirk'} style={{marginLeft: 5}}>
+          <a href={'https://github.com/atomkirk'} style={{ marginLeft: 5 }}>
             Github
           </a>
-          <a href={'http://stackoverflow.com/users/798055/atomkirk'} style={{marginLeft: 5}}>
+          <a href={'http://stackoverflow.com/users/798055/atomkirk'} style={{ marginLeft: 5 }}>
             Stack Overflow
           </a>
-          <a href={'https://www.linkedin.com/in/atomkirk/'} style={{marginLeft: 5}}>
+          <a href={'https://www.linkedin.com/in/atomkirk/'} style={{ marginLeft: 5 }}>
             LinkedIn
           </a>
         </div>
