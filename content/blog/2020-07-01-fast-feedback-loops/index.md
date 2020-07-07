@@ -33,7 +33,9 @@ in the context of your app.
 Code reviews are a big chunk of a developers day. Pair programming allows the code reviews to happen in real-time as you’re
 writing code. Whats more, that tight feedback loop of live conversation, both people with full context, fully invested,
 leads to significantly better code and an accelerated advancement of everyone’s skill and experience. What you save in
-time reviewing and tech debt more than makes up for the purely “lines of code written” opportunity cost.
+time reviewing and tech debt more than makes up for the purely “lines of code written” opportunity cost.[^3]
+
+A half way
 
 ## Fast build times
 
@@ -42,10 +44,12 @@ get very slow as the project grows. This means this workflow is out of reach for
 [Go](https://golang.org/), [Ocaml](https://ocaml.org/), [ReasonML](https://reasonml.github.io/),
 [vlang](https://vlang.io/), [esbuild](https://github.com/evanw/esbuild), [Elm](https://github.com/evancz/elm-project-survey/issues/33)
 are some rock stars. The feedback in these languages feels instant. There are some mid range options where, after some
-monthly tweaking, will only make you wait 5-10s for an imcremental compile and start up. [Elixir](https://elixir-lang.org/)
+monthly tweaking, will only make you wait 5-10s for an incremental compile and start up. [Elixir](https://elixir-lang.org/)
 is an example I've used.
 
 If a software company wants to move faster than its competitors, it has to tighten its feedback loop.
 
 [^1]: Or potential competitors. Many an incumbent has been taken down by a fast moving startup.
 [^2]: A lot do this because tests run too slow on their local machine.
+[^3]: I've only done the normal sporadic pair programming that everyone does on a team, but I've always thought it was
+awesome. My interest in it is well explained by [this article](https://jasonlarsen.me/2020/02/16/ship-faster-with-this-one-weird-trick).
