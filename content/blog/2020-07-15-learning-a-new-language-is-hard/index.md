@@ -27,10 +27,10 @@ you could build this in 1 hour using your language.
 
 This experience is why learning new programming languages is so hard and most people resist it. Many go the vast
 majority of their career using the first or second language they learn. But, we shouldn't. The benefits of being
-comfortable and deeply understand different languages, paradigms, ecosystems and ways of solving problems can double or
-triple your effectiveness as a software engineer.
+comfortable in and deeply understanding different languages, paradigms, ecosystems and ways of solving problems can double or
+triple your effectiveness as a software engineer in any language.
 
-The other reason is that when everyone on a team is a full stack engineer and willing to workin any tech, the teams is
+The other reason is that when everyone on a team is a full stack engineer and willing to work in any tech, the teams is
 multiple times faster than otherwise. When each person can build and own an entire feature, you have a very small
 dependency graph (waiting only on architects and designers) and far fewer conflicts.
 
