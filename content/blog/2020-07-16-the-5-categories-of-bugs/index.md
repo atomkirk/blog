@@ -4,7 +4,7 @@ date: 2020-07-16
 ---
 
 ### Syntax errors
-**Your parser won't make it passed this** no matter what language.[^1] You get immediate feedback if you haven't stated something correctly.
+**Your parser won't make it past this** no matter what language.[^1] You get immediate feedback if you haven't stated something correctly.
 
 ### Linking, reference & type errors
 **Where your code references other code incorrectly.** A compiled language, with a linker, won't compile on this. Javascript,
