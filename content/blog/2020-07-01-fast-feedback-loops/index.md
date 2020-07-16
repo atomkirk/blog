@@ -35,7 +35,10 @@ writing code. Whats more, that tight feedback loop of live conversation, both pe
 leads to significantly better code and an accelerated advancement of everyone’s skill and experience. What you save in
 time reviewing and tech debt more than makes up for the purely “lines of code written” opportunity cost.[^3]
 
-A half way
+A mid point here is to just do pair programming for code reviews. Engineers write their feature and then get in line
+for a pair programming session with someone. The engineer walks the reviewer through their changes, giving context and
+reasoning. The reviewer offers feedback and suggestions and they discuss and make the changes together. After this 15
+minute pair session, both are happy with the branch and it is merged into master.[^4]
 
 ## Fast build times
 
@@ -51,5 +54,5 @@ If a software company wants to move faster than its competitors, it has to tight
 
 [^1]: Or potential competitors. Many an incumbent has been taken down by a fast moving startup.
 [^2]: A lot do this because tests run too slow on their local machine.
-[^3]: I've only done the normal sporadic pair programming that everyone does on a team, but I've always thought it was
-awesome. My interest in it is well explained by [this article](https://jasonlarsen.me/2020/02/16/ship-faster-with-this-one-weird-trick).
+[^3]: I've only done the normal sporadic pair programming that everyone does on a team, but I've always thought it was awesome. My interest in it is well explained by [this article](https://jasonlarsen.me/2020/02/16/ship-faster-with-this-one-weird-trick).
+[^4]: Another benefit of this is tone of voice. It's much easier to not get defensive about feedback using voices.
