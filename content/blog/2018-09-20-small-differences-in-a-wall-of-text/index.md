@@ -3,7 +3,7 @@ title: Small differences in a wall of text
 date: 2018-09-20
 ---
 
-We've all ran that test that failed and it dumped a two walls of text on you, one as the expected and the other as the reality.
+We've all ran that test that failed and it dumped two walls of text on you, one as the expected and the other as the reality.
 Your job is to figure out how the two walls of text are different. An example is testing the content of an email
 body.
 
