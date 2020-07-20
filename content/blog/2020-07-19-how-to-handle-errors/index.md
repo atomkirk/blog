@@ -5,7 +5,8 @@ date: 2020-07-19
 
 Everything useful a program does can be described as a "side-effect." A purely functional language that produces no
 side-effects is also purely and utterly useless. It is these side effects where things go wrong. Any useful operation
-on a resource your program tries to perform, assuming the program itself has no bugs, could fail for the following reasons:
+on a resource your program tries to perform, even if your code has no bugs, could fail for the following reasons that
+are completely out of your control:
 
 - The resource doesn't exist (file doesn't exist, server turned off, bad address).
 - You can't reach it (WiFi disconnected, bad nginx config, timeouts).
