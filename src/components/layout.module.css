@@ -3,7 +3,17 @@
 }
 
 pre[class*="language-"] {
-  border-radius: 5px;
+  border-radius: 10px;
   box-shadow: 0 5px 7px 4px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
+}
+
+section ul {
+  background: #efefef;
+  padding: 20px 15px 10px 40px;
+  border-radius: 10px;
+}
+
+li ul {
+  padding: 0px 0px 0px 0px;
 }
