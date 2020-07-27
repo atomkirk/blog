@@ -17,9 +17,9 @@ will do: parse your files. If it can't parse it, you'll get a syntax error.
 
 Second, we type function/variable names wrong or we forget the shape of data in a variable and use it wrong. If you've
 got a good test pyramid, your tests will run fast and often and hopefully catch these problems quickly. But it requires
-your tests are thorough and optimized. Let's face it, this is hard and most teams don't. That's why a
+that your tests are thorough and optimized. Let's face it, this is hard and most test suites aren't. That's why a
 lot of teams
-are turning to type safety, because you can collapse the second level here into the first so that both syntax and
+are turning to type safety, because you can collapse the second level into the first so that both syntax and
 reference/type errors are caught immediately when you try to compile/build.
 
 Type safety also allows powerful tooling that can tighten feedback loops further by offering relevant suggestions, information
