@@ -7,7 +7,7 @@ I wrote before about the importance of [fast feedback loops](https://atomkirk.co
 the [5 categories of bugs](http://localhost:8000/2020-07-16-the-5-categories-of-bugs/) and today I thought about how
 this could be represented as a pyramid, much like the [Test Pyramid](https://martinfowler.com/articles/practical-test-pyramid.html#:~:text=The%20%22Test%20Pyramid%22%20is%20a,put%20it%20into%20practice%20properly.).
 
-![Fast feedback pyramid](pyramid.jpeg)
+![Fast feedback pyramid](pyramid.png)
 
 Toward the bottom are the mistakes we make as programmers most frequently. They are also typically the fastest to catch
 and correct.
