@@ -60,6 +60,9 @@ that resource, authorize the user to perform that action on that resource, etc. 
 duplicated logic to do that for each attribute[^2]. And, when the requirements ask you to change
 multiple things about a resource at once, you now need two ways to perform the same mutation. 🤢
 
+This small API surface area is natural and easy to digest. It's everywhere. And, as you add fields and functionality,
+the interface doesn't have to change. Implementations can change without overly-specific functions becoming obsolete.
+
 #### Why does it make code easier to understand?
 
 Every time I come across this in someone else's code, I first try to figure out "how should this
@@ -91,6 +94,10 @@ favorite APIs use this principle, but then we turn around and write our own task
 
 Stick to CRUD for interacting with resources as much as possible, from your API (`POST /reservations`) all the
 down to your ORM and standard libraries.
+
+If you're writing private helper functions, go ahead and be specific, or whatever makes sense. But, if you are writing
+a public interface for others to use, it really helps to make your interface obvious and extendable if you provide
+create, read, update and delete functions.
 
 [^1]: These signatures can be adapted to OOP (e.g. `User.create(attributes)`, `user.update(attributes)`, etc)
 [^2]: You can authorize per field/attribute too with CRUD, so you don't lose functionality but gain flexibility.
