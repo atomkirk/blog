@@ -60,7 +60,7 @@ that resource, authorize the user to perform that action on that resource, etc. 
 duplicated logic to do that for each attribute[^2]. And, when the requirements ask you to change
 multiple things about a resource at once, you now need two ways to perform the same mutation. 🤢
 
-#### Why does it make code hard to understand?
+#### Why does it make code easier to understand?
 
 Every time I come across this in someone else's code, I first try to figure out "how should this
 feature change application state?" "What resources am I modifying?" Then, I read code for an hour
