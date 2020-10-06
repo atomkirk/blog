@@ -33,7 +33,7 @@ This should be something like: `Transaction.create(%{kind: "deposit", amount: 3}
 This is the most common and reasonable but I would still argue against it. Behind the scenes, you are mutating a
 resource, so just use CRUD!
 
-For reservations, instead of `Property.reserve(…)` or `POST /reservations/3/reserve` we should just do:
+For reservations, instead of `Property.reserve(…)` or `POST /properties/3/reserve` we should just do:
 
 ```
 Reservation.create({property_id: 3, start_date: …, end_date: …})
