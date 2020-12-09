@@ -58,6 +58,7 @@ const Layout = ({ location, title, children }) => {
       }}
       className={styles.links}
     >
+      <script async defer data-domain="atomkirk.com" src="https://plausible.io/js/plausible.js"></script>
       <header>{header}</header>
       <main>{children}</main>
     </div>
