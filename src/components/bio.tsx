@@ -59,7 +59,7 @@ const Bio = () => {
         }}
       >
         <div>
-          Shower thoughts on programming by <strong>{author.name}</strong>
+          Shower thoughts on programming
         </div>
         <div>
           <a href={`https://twitter.com/atomkirk`}>
