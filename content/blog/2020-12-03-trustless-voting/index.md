@@ -1,7 +1,9 @@
 ---
-title: Trustless voting
+title: Trustless voting WIP
 date: 2020-12-03
 ---
+
+NOTE: This is a work in progress. I've learned since that to make this truly convincing, it has to protect anonimity even better than mail in voting (which doesn't protect it very much).
 
 Our current voting system has the following problems:
 
