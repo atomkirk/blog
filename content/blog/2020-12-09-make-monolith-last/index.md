@@ -15,7 +15,7 @@ Here's a chart he provides to illustrate:
 But, come on, when you add all the drawbacks of an SOA, the costs are enormous and they get worse.
 Data syncing, backfilling, inconsistencies, progogation of bad data. Books upon books on how to
 deal with the problems specific to using an SOA. It takes a truly terribly designed monolith
-and a fantastically designed SOA for those lines to cross. The chart should really looks like this:
+and a fantastically designed SOA for those lines to cross. The chart should really look like this:
 
 ![Reality](reality.png)
 
