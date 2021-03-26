@@ -23,7 +23,7 @@ defmodule Equation do
   def compute(equation, variable_values) do
     with {:ok, ast} <- Code.string_to_quoted(equation),
          {:ok, value} <- do_compute(ast, variable_values) do
-           value
+           {:ok, value}
     else
       {:error, {_, _, _}} ->
         {:error, :syntax_error}
@@ -65,15 +65,16 @@ Here it is in action:
 defmodule EquationTest do
   use ExUnit.Case, async: true
 
-  test "multiplication", do: assert Equation.compute("A * B", %{A: 3, B: 5}) == Decimal.new(15)
-  test "division", do: assert Equation.compute("A / B", %{A: 15, B: 5}) == Decimal.new(3)
-  test "subtraction", do: assert Equation.compute("A - B", %{A: 3, B: 5}) == Decimal.new(-2)
-  test "complex", do: assert Equation.compute("(A * B) / C", %{A: 3, B: 5, C: 5}) == Decimal.new(3)
-  test "money", do: assert Equation.compute("(A * B) / C", %{A: "1213.33", B: "-5.30", C: "3.34"}) |> Decimal.round(2) == Decimal.from_float(-1925.34)
-  test "with literal", do: assert Equation.compute("(A * B) / 5.0", %{A: 3, B: 5}) == Decimal.new(3)
+  test "multiplication", do: assert Equation.compute("A * B", %{A: 3, B: 5}) == {:ok, Decimal.new(15)}
+  test "division", do: assert Equation.compute("A / B", %{A: 15, B: 5}) == {:ok, Decimal.new(3)}
+  test "subtraction", do: assert Equation.compute("A - B", %{A: 3, B: 5}) == {:ok, Decimal.new(-2)}
+  test "complex", do: assert Equation.compute("(A * B) / C", %{A: 3, B: 5, C: 5}) == {:ok, Decimal.new(3)}
+  test "money", do: assert Equation.compute("(A * B) / C", %{A: "1213.33", B: "-5.30", C: "3.34"}) |> Decimal.round(2) == {:ok, Decimal.from_float(-1925.34)}
+  test "with literal", do: assert Equation.compute("(A * B) / 5.0", %{A: 3, B: 5}) == {:ok, Decimal.new(3)}
 
   test "syntax error", do: assert Equation.compute("A * B C", %{A: 3, B: 5, C: 2}) == {:error, :syntax_error}
   test "missing var", do: assert Equation.compute("A * B", %{A: 3}) == {:error, :missing_variable}
 
 end
+
 ```
