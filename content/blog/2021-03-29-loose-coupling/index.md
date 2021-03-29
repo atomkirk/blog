@@ -11,8 +11,8 @@ I had an epiphany the other day where I realized that coupling is not about how 
 of your references. Two things that reference each other are tightly coupled. Where A references B, but B knows nothing
 of A, they are loosely coupled.
 
-You can "use" something, but it becomes tightly coupled to you when it only works for you. A tightly
-coupled car is one where the seat, steering wheel and key only fit you and only work for you. No one else can drive it, not even your spouse.
+You can "use" something, but it becomes tightly coupled to you when it only works for you. A car is tightly coupled to you when
+the seat, steering wheel and key only fit you and only work for you. No one else can drive it, not even your spouse.
 
 Another way to think about loosely coupled code is code that you could easily publish as open source and it would be
 useful to other projects totally unrelated to yours. This is why I recommend writing as much code as you can as if you're
@@ -31,19 +31,20 @@ either to majorly refactored app code, or future app code. More code more reusab
 
 What is a reference? It can be either a direct mention of a resource or type specific to your application (e.g. `Account`, `User` or `Invoice`)
 or it can be arguments, properties and events that are specific to your application. Usually, if you can remove any
-mention to anything specific to your app, you're pretty much there (e.g. a option called `hidden` instead of `hiddenToUser`).
+mention to anything specific to your app, you're pretty much there (e.g. an option called `hidden` instead of `hiddenToUser`).
+It's also important to not to accidentally couple services through leaky abstractions.
 
 You can create a loose coupling by making sure all the arrows (references) point in the same direction. Just because a service
-is used by 100 other different parts of the app doesn't mean its tightly coupled. Stripe is used by a bagillion companies, but
-its not coupled to any of them.
+is used by 100 other different parts of the app doesn't mean it's tightly coupled. Stripe is used by a bagillion companies, but
+it's not coupled to any of them.
 
-Here's an example of how you might avoid coupling in a database. Let's say you've created a "service" resource that represents
+Here's an example of how you might avoid coupling in a database. Let's say you've created a resource that represents
 files stored on S3 called `CloudFile`. It handles all the storage of file size, file name, and generating signed urls etc.
 Lot's of things in your app have files and they all reference a `CloudFile`.
 
 ![Coupled](simple.png)
 
-Let's say invoices now need to have two files. The impulse thing to do would be to change it from a `belongs_to` to a `has_many`,
+Let's say invoices now need to have two files. The naive thing to do would be to change it from a `belongs_to` to a `has_many`,
 putting the foreign key on `CloudFile`:
 
 ![Coupled](has_many.png)
